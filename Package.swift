@@ -17,7 +17,9 @@ let package = Package(
     .package(url: "https://github.com/Quick/Nimble.git", from: "9.2.1")
   ],
   targets: [
-    .target(name: "Time", dependencies: ["Resolver"]),
+    .binaryTarget(name: "TimeKMM",
+                  path: "../TimeKMM/TimeKMM/build/XCFrameworks/debug/TimeKMM.xcframework"),
+    .target(name: "Time", dependencies: ["TimeKMM", "Resolver"]),
     .target(name: "TimeTestHelpers", dependencies: ["Time"]),
     .testTarget(name: "TimeTests", dependencies: [
       "Quick",
