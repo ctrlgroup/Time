@@ -7,6 +7,7 @@
 //
 
 import Resolver
+@_exported import TimeKMM
 
 public extension Resolver {
   static func registerTimeServices() {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct DateTime: Codable, Equatable, Hashable {
+public struct DateTime: Equatable, Hashable {
   public let calendarDate: CalendarDate
   public let timeOfDay: TimeOfDay
 
@@ -53,9 +53,9 @@ public extension DateTime {
     }
     return DateComponents(calendar: calendar,
                           timeZone: timeZone,
-                          year: calendarDate.year,
-                          month: calendarDate.month,
-                          day: calendarDate.day,
+                          year: Int(calendarDate.year),
+                          month: Int(calendarDate.month),
+                          day: Int(calendarDate.day),
                           hour: timeOfDay.hour,
                           minute: timeOfDay.minute,
                           second: timeOfDay.second)

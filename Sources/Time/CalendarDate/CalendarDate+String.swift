@@ -42,7 +42,7 @@ public extension CalendarDate {
     return dateTime.iso8601StringRepresentation(timeZone: timeZone)
   }
 
-  init(string: String) throws {
+  convenience init(string: String) throws {
 
     let match = CalendarDate.regexMatch(for: string, pattern: CalendarDate.connectDateFormatRegex)
 
@@ -53,12 +53,12 @@ public extension CalendarDate {
     let (dayString, monthString, yearString) = CalendarDate.componentsOfDateString(string: string,
                                                                                    fromRegexMatch: match)
 
-    try self.init(day: Int(dayString)!,
-                  month: Int(monthString)!,
-                  year: Int(yearString)!)
+    try self.init(day: Int32(Int(dayString)!),
+                  month: Int32(Int(monthString)!),
+                  year: Int32(Int(yearString)!))
   }
 
-  init(iso8601String string: String) throws {
+  convenience init(iso8601String string: String) throws {
 
     let match = CalendarDate.regexMatch(for: string, pattern: CalendarDate.iso8601Regex)
 
@@ -69,9 +69,9 @@ public extension CalendarDate {
     let (yearString, monthString, dayString) = CalendarDate.componentsOfISO8601String(string: string,
                                                                                       fromRegexMatch: match)
 
-    try self.init(day: Int(dayString)!,
-                  month: Int(monthString)!,
-                  year: Int(yearString)!)
+    try self.init(day: Int32(Int(dayString)!),
+                  month: Int32(Int(monthString)!),
+                  year: Int32(Int(yearString)!))
   }
 
   private static func regexMatch(for string: String, pattern: String) -> NSTextCheckingResult? {

@@ -50,6 +50,6 @@ public extension CalendarDate {
 
 public extension DateFormatter {
   func string(from calendarDate: CalendarDate) -> String {
-    return string(from: calendarDate.date(in: timeZone))
+    return string(from: calendarDate.dateInTimeZone(timeZone: timeZone))
   }
 }

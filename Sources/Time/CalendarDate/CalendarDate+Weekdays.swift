@@ -15,7 +15,7 @@ public extension CalendarDate {
     if difference == 0 {
       return self - 7
     }
-    return self + difference
+    return self + Int(difference)
   }
 
   func next(weekday: DayOfWeek) -> CalendarDate {
@@ -28,9 +28,9 @@ public extension CalendarDate {
     if difference == 0 {
       return self
     } else if (currentDayOfWeek + difference) >= 7 {
-      return self + (difference - 7)
+      return self + Int(difference - 7)
     } else {
-      return self + difference
+      return self + Int(difference)
     }
   }
 }

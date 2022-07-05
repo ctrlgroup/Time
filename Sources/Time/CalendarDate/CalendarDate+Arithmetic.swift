@@ -10,7 +10,7 @@ import Foundation
 
 public extension CalendarDate {
   func dateByAdding(_ value: Int, unit: Calendar.Component) -> CalendarDate {
-    let resultDate = gregorianCalendar.date(byAdding: unit, value: value, to: date(in: .utc))!
+    let resultDate = gregorianCalendar.date(byAdding: unit, value: value, to: dateInTimeZone(timeZone: .utc))!
     return CalendarDate(date: resultDate, timeZone: .utc)
   }
 }

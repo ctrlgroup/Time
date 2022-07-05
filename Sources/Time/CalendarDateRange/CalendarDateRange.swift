@@ -44,8 +44,8 @@ public extension CalendarDateRange {
     return element - startDate
   }
 
-  subscript(index: Int) -> CalendarDate {
-    precondition(index < count)
-    return startDate + index
-  }
+//  subscript(index: Int) -> CalendarDate {
+//    precondition(index < count)
+//    return startDate + index
+//  }
 }

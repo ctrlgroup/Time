@@ -16,14 +16,14 @@ final class DayOfWeekTests: QuickSpec {
     super.spec()
     describe("Day of week") {
 
-      it("can be instantiated with a DateComponents") {
-        expect(DayOfWeek(dateComponents: DateComponents(weekday: 1))).to(equal(.sunday))
-        expect(DayOfWeek(dateComponents: DateComponents(weekday: 2))).to(equal(.monday))
-        expect(DayOfWeek(dateComponents: DateComponents(weekday: 3))).to(equal(.tuesday))
-        expect(DayOfWeek(dateComponents: DateComponents(weekday: 4))).to(equal(.wednesday))
-        expect(DayOfWeek(dateComponents: DateComponents(weekday: 5))).to(equal(.thursday))
-        expect(DayOfWeek(dateComponents: DateComponents(weekday: 6))).to(equal(.friday))
-        expect(DayOfWeek(dateComponents: DateComponents(weekday: 7))).to(equal(.saturday))
+      it("can be created from a DateComponents") {
+        expect(DateComponents(weekday: 1).dayOfWeek).to(equal(.sunday))
+        expect(DateComponents(weekday: 2).dayOfWeek).to(equal(.monday))
+        expect(DateComponents(weekday: 3).dayOfWeek).to(equal(.tuesday))
+        expect(DateComponents(weekday: 4).dayOfWeek).to(equal(.wednesday))
+        expect(DateComponents(weekday: 5).dayOfWeek).to(equal(.thursday))
+        expect(DateComponents(weekday: 6).dayOfWeek).to(equal(.friday))
+        expect(DateComponents(weekday: 7).dayOfWeek).to(equal(.saturday))
       }
 
       it("has a very short weekday symbol") {
