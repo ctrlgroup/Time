@@ -43,4 +43,9 @@ public enum DayOfWeek: Equatable, CaseIterable {
     let calendar = Calendar.gregorianInUTC(withLocale: locale)
     return calendar.shortStandaloneWeekdaySymbols[dateComponentsCompatibleWeekday - 1]
   }
+
+  public func weekdaySymbol(locale: Locale = .current) -> String {
+    let calendar = Calendar.gregorianInUTC(withLocale: locale)
+    return calendar.weekdaySymbols[dateComponentsCompatibleWeekday - 1]
+  }
 }
